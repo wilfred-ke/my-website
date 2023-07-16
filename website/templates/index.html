@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load social_share %}
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>omwagawilfred.com</title>
+</head>
+<style>
+    body{
+        min-height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+    li.nav-item a {
+        font-size: 20px;
+    }
+
+    p#one {
+        font-size: 10vw;
+        font-weight: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #div1 {
+        display: flex inline block;
+        flex-direction: row;
+        width: auto;
+        float: inline;
+        align-items: center;
+    }
+
+    #intro {
+        position: relative;
+    }
+
+    #divbtn {
+        float: none;
+    }
+
+    #btn1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-transform: uppercase;
+        font-size: 2em;
+        background-color: #000;
+        color: transparent;
+        color: #03a9f4;
+        animation: myAnimation 4s ease-in-out infinite;
+    }
+
+    @keyframes myAnimation {
+
+        0%,
+        100% {
+            background-color: gold;
+            color: #000;
+        }
+
+        50% {
+            background-color: rgb(36, 236, 18);
+            color: beige;
+        }
+    }
+
+    .image {
+        width: 100%;
+        height: 105vh;
+        padding: 100px 20px;
+        text-align: center;
+        display: flex;
+        color: azure;
+        font-size: 10vw;
+        text-shadow: 3px 3px 3px #ababab;
+        font-family: Garamond, serif;
+        justify-content: center;
+        align-items: center;
+        background-position: center;
+        background-size: cover;
+        background-image:linear-gradient(45deg, transparent, rgba(199, 13, 236, 0.5), rgb(80, 252, 80, 0.5)),
+        url('{% static "images/wilfred.jpg" %}');
+    }
+
+    .nav-start h3 {
+        font-size: 3vw;
+        color: #252839;
+        font-weight: 500;
+        overflow: hidden;
+    }
+
+    .text-center#one {
+        padding-top: 10px;
+        align-self: center;
+        font-size: 50px;
+        color: transparent;
+        background-image: linear-gradient(#fff, #fff);
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+        background-position: -1500px 0;
+        animation: backcolor 3s linear infinite alternate;
+    }
+
+    @keyframes backcolor {
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    .div3 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        height: 40vh;
+    }
+
+    h5#card1 {
+        transform: translate(to top right rgba(82, 245, 82, 0.9));
+        animation: changecolor 2s ease-in-out infinite;
+    }
+
+    @keyframes changecolor {
+
+        0%,
+        100% {
+            color: hsl(290, 84%, 52%);
+            box-shadow: rgb(222, 132, 240);
+        }
+
+        50% {
+            color: rgb(219, 43, 12);
+        }
+
+        75% {
+            color: rgb(9, 38, 206);
+        }
+    }
+
+    #mycard {
+        height: 150%;
+    }
+
+    #card2 {
+        animation: changebg 4s ease-in-out infinite;
+    }
+
+    @keyframes changebg {
+
+        0%,
+        100% {
+            background: rgb(236, 202, 5);
+            color: #131111;
+            box-shadow: transparent;
+        }
+
+        50% {
+            background: #360404;
+            color: #f3f1f1;
+            box-shadow: none;
+        }
+    }
+
+    .index1 {
+        width: 200px;
+        height: 400px;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    .index2 {
+        width: 200px;
+        height: 400px;
+        top: 10%;
+        left: 10%;
+        z-index: -2;
+    }
+
+    #skills {
+        padding: 80px 20px;
+    }
+
+    img{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+
+    .banner {
+        margin: 20px;
+        width: 80vw;
+        height: 70vh;
+        position: relative;
+    }
+
+    .four {
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    .five {
+        top: 10%;
+        left: 10%;
+        z-index: 1;
+    }
+
+    .six {
+        top: 20%;
+        left: 20%;
+        z-index: 2;
+    }
+
+    .seven {
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .eight {
+        top: 10%;
+        left: 10%;
+        z-index: 3;
+    }
+
+    .nine {
+        top: 20%;
+        left: 20%;
+        z-index: 4;
+    }
+
+    .ten {
+        top: 0;
+        left: 10%;
+        z-index: 2;
+    }
+
+    @media only screen and (max-width:560px) {
+        .image .row h2{
+            font-size: 5vw !important;
+        }
+
+        .nav {
+            align-items: center;
+            display: flex;
+        }
+
+        .nav-start .name {
+            font-size: large;
+        }
+        :root{
+            overflow-x: hidden;
+        }
+        header{
+            position: fixed;
+        }
+        .text-center#one{
+            font-size: 5vw !important;
+            background-position: -500px 0;
+        }
+    }
+
+    .card-body img:hover {
+        background: rgb(223, 8, 8);
+    }
+    img#insta:hover{
+        background: #fff;
+    }
+    img#in:hover{
+        background: rgb(195, 0, 255);
+    }
+</style>
+
+<body onload="welcome()" data-bs-spy="scroll" data-bs-target="#show" data-bs-offset="50">
+    <header id="nav-menu" aria-label="navigation-bar">
+        <div class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+            <div class="container-fluid" id="show">
+                <div class="nav-start">
+                    <h3 class="name">Wilfred Omwaga</h3>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="{% url 'homepage' %}" class="nav-link text-md">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#work" class="nav-link">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#skills" class="nav-link">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#footer" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br><br>
+    <div class="container-fluid bg-white mb-0" style="padding: 80px 20px;" id="div1">
+        <div class="container bg-dark" style="width: 100%; height: 200px;" id="intro">
+            <p class="text-white px-2 pt-2"> Hello there✋!</p>
+            <p class="text-center" id="one">I am Wilfred Omwaga <span>This is my simple website totally build with css and html</span></p>
+        </div><br></br>
+        <div class="justify-content-center" id="divbtn">
+            <button class="btn btn-light btn-md" id="btn1">Junior Fullstack Developer</button>
+        </div>
+    </div>
+    <br></br>
+    <div class="image" id="about">
+        <div class="row">
+            <div class="col-12 ">
+                <h2>I am a Junior Fullstack Developer with ideal knowledge and experience in web development, I have a
+                    good command over both front end and back end technologies allowing me to build complete and
+                    scalable applications.<h2>
+            </div>
+            <div class="col-12">
+                <h2>On the front-end side, I specialize in HTML, CSS, and JavaScript. I'm passionate about creating
+                    intuitive user interfaces that provide an exceptional user experience. I pay great attention to
+                    detail, ensuring that the websites or applications I develop are
+                    responsive,visually appealing, and accessible across different devices and browsers and
+                    satisfy different clients needs.</h2>
+            </div>
+            <div class="col-12">
+                <h2>Moving to the back end, I'm proficient in server-side languages like Python,Php,Java.and Django
+                    python server-side framework.I have extensive experience working with databases such as MySQL.</h2>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <br>
+    <div id="work" class="div3 padding 100px 20px text-light bg-dark pb-4" style="height: 110%;">
+        <div class="container py-0">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 pt-3" id="mycard">
+                    <div class="card bg-light justify-content-center" style="height: 30vh;">
+                        <div class="card-body  text-center">
+                            <h5 class="card-text" id="card1">Currently a Student at Meru University of Science and
+                                Technology pursuing BSc Mathematics and Computer Science</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 pt-3" id="mycard1">
+                    <div class="card bg-light " style="height: 30vh;">
+                        <div class="card-body text-center" id="card2">
+                            <h4 class="card-title">My Projects</h4>
+                            <h5 class="card-text">Stay tuned I'll update all my projects here</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid padding 100px 20px" id="skills">
+        <div class="row d-flex" style="height: 30vh;">
+            <h6 class="display-5 text-center py-0 text-info">Skills</h6>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 mx-0">
+                <div class="banner">
+                    <img src="{% static 'images/html.png' %}" class="four" alt="html_image">
+                    <img src="{% static 'images/css.png' %}" class="five" alt="css_image">
+                    <img src="{% static 'images/JavaScript.png' %}" class="six" alt="javascript_image">
+                </div>
+            </div><br>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-0 mx-0">
+                <div class="banner">
+                    <img src="{% static 'images/py.png' %}" class="seven" alt="python_image" id="indexes">
+                    <img src="{% static 'images/php.jpeg' %}" alt="php_image" class="eight">
+                    <img src="{% static 'images/java.png' %}" class="nine" alt="java_image">
+                </div>
+            </div><br>
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 my-0 mx-0">
+                <div class="banner">
+                    <img src="{% static 'images/django.png' %}" class="ten" alt="django-python-framework">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <footer id="footer">
+        <div class="container-fluid bg-dark text-light mt-5 pt-5 mb-0">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                        <h6>Contact Me</h6>
+                        <p class="font-weight-light">
+                            <a href="mailto:omwagawilfred@gmail.com">
+                                <img src="{% static 'images/gmail.png' %}" alt="mail"
+                                    style="width: auto; height: 30px; object-fit: scale-down; font-size: 36px;">
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                        <h6>Follow Me</h6>
+                        <p class="font-weight-light">
+                            <a href="https://www.instagram.com/wilfrd_ke" rel="noopener noreferrer" target=_blank>
+                                <img src="{% static 'images/instagram.png' %}" alt="Instagram" class="img-fluid"
+                                    style="width: 50px; height: 30px; object-fit: scale-down; font-size: 48px;" id="insta"></a>
+                                    <br><br>
+                            <a href="https://www.linkedin.com/in/wilfred-omwaga-789267263/" rel="noopener noreferrer" target="_blank">
+                                <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" class="img-fluid" 
+                                style="width: 50px; height: 30px; object-fit: scale-down; font-size: 48px;" id="in"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center py-3">
+            <p style="font-size: 12px;">@2023 Wilfred</p>
+            <p>ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+</body>
+<script>
+    function welcome(){
+            alert('Hi✋,Thanks for visiting this page. You wanna know more about me press ok to continue reading.')
+        }  
+</script>
+
+</html>
